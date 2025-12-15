@@ -34,19 +34,16 @@ public class PlayerBehavior : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        // Normalize time 0 → 1
         float t = (timer % bounceDuration) / bounceDuration;
 
         float y;
 
         if (t < 0.5f)
         {
-            // Fast up (ease out)
             y = Mathf.Pow(t * 2f, 0.35f);
         }
         else
         {
-            // Hard fall (ease in)
             y = 1f - Mathf.Pow((t - 0.5f) * 2f, 1.4f);
         }
 

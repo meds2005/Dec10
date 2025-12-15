@@ -32,20 +32,20 @@ public class GameManager : MonoBehaviour
         player.enabled = false;
 
         gameName.SetActive(true);
-        startScreen.SetActive(true);   // show ONLY on first launch
+        startScreen.SetActive(true);   
         gameOver.SetActive(false);
         instructions.SetActive(true);
-        playButton.SetActive(true);    // play button visible on start
+        playButton.SetActive(true);    
         credits.SetActive(true);
     }
 
     public void Play()
     {
         audioSource.PlayOneShot(playClickSound);
-        hasGameStarted = true;                 // 🔑 mark game as started
+        hasGameStarted = true;       
 
         gameName.SetActive(false);
-        startScreen.SetActive(false);          // hide start screen
+        startScreen.SetActive(false);        
         gameOver.SetActive(false);
         instructions.SetActive(false);
         playButton.SetActive(false);

@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8115997575300005332, guid: 6ab4ae2b9aee745c3a30f44b5d957ea5, type: 3}
-  spawnInterval: 4
+  spawnInterval: 8
   spawnOffset: 1
 --- !u!4 &932381098
 Transform:

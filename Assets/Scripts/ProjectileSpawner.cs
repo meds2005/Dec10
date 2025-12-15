@@ -4,7 +4,7 @@ public class ProjectileSpawner : MonoBehaviour
 {
     public GameObject projectilePrefab;
 
-    public float spawnInterval = 4f;
+    public float spawnInterval = 8f;
     private float timer;
 
     public float spawnOffset = 1f;

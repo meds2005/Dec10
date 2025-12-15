@@ -30,18 +30,15 @@ public class PipesDrag : MonoBehaviour
     {
         if (dragging)
         {
-            // Get mouse position in world space
             Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = transform.position.z;
 
-            // Calculate new vertical position only
             float newY = mouseWorld.y + offset.y;
 
-            // Apply ONLY the Y movement (vertical)
             transform.position = new Vector3(
-                transform.position.x,    // keep original X
-                newY,                   // update Y
-                transform.position.z    // keep original Z
+                transform.position.x,    
+                newY,                
+                transform.position.z    
             );
         }
     }
