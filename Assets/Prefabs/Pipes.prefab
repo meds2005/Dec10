@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7709217403979431134}
   - component: {fileID: 7615593703966589286}
   - component: {fileID: 8142043627323274115}
+  - component: {fileID: 2634658508918173502}
   m_Layer: 0
   m_Name: Top Pipe
   m_TagString: Obstacle
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 813968067200424971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 5.8684, z: 0}
-  m_LocalScale: {x: 4.2999, y: 5.707745, z: 1}
+  m_LocalPosition: {x: 0.02, y: 4.96, z: 0}
+  m_LocalScale: {x: 1.1241627, y: 1.1735227, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7651840019346665020}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1304208510633726333, guid: 54871f1a2d26a4df5a5a15ca5623f91e, type: 3}
+  m_Sprite: {fileID: 2843111395664471898, guid: 9e6df517846864f4ab0b843169d8384f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 1.6}
+    oldSize: {x: 1.04, y: 6.4}
     newSize: {x: 0.26, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -134,6 +135,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.26, y: 1.510726}
   m_EdgeRadius: 0
+--- !u!114 &2634658508918173502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813968067200424971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101cc55d20c2c4fb7a594df9e4428fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3770900198025633607
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +158,7 @@ GameObject:
   - component: {fileID: 4272967600792878337}
   - component: {fileID: 6749475187511681465}
   - component: {fileID: 7910697071731052560}
+  - component: {fileID: 1995492412396336857}
   m_Layer: 0
   m_Name: Bottom Pipe
   m_TagString: Obstacle
@@ -161,8 +175,8 @@ Transform:
   m_GameObject: {fileID: 3770900198025633607}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -5.16, z: 0}
-  m_LocalScale: {x: 4.2999, y: 4.772362, z: 1}
+  m_LocalPosition: {x: 0.02, y: -5.01, z: 0}
+  m_LocalScale: {x: 1.1115242, y: 1.1846161, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7651840019346665020}
@@ -211,7 +225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1304208510633726333, guid: 54871f1a2d26a4df5a5a15ca5623f91e, type: 3}
+  m_Sprite: {fileID: 2843111395664471898, guid: 9e6df517846864f4ab0b843169d8384f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -260,7 +274,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 1.6}
+    oldSize: {x: 1.04, y: 6.4}
     newSize: {x: 0.26, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -268,6 +282,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.26, y: 1.5252597}
   m_EdgeRadius: 0
+--- !u!114 &1995492412396336857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770900198025633607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101cc55d20c2c4fb7a594df9e4428fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4548467381372552562
 GameObject:
   m_ObjectHideFlags: 0

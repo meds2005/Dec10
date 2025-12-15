@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 54871f1a2d26a4df5a5a15ca5623f91e
+guid: 9e6df517846864f4ab0b843169d8384f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1304208510633726333
-    second: Pipe_0
+      213: 2843111395664471898
+    second: Candy Cane_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pipe_0
+      name: Candy Cane_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
-        height: 160
+        width: 104
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d715d5dfaba791210800000000000000
-      internalID: 1304208510633726333
+      spriteID: a57227b30c2c47720800000000000000
+      internalID: 2843111395664471898
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pipe_0: 1304208510633726333
+      Candy Cane_0: 2843111395664471898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

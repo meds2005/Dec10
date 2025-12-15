@@ -2,48 +2,65 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    public AudioClip bounceSound;
+    private AudioSource audioSource;
+    private bool playedThisCycle = false;
+
+    public float jumpHeight = 1.2f;
+    public float bounceDuration = 2.4f;
+
     private Vector3 startPosition;
-    private Vector3 direction;
+    private float timer;
 
-    public float gravity = -9.8f;
-    public float strength = 7f;
-
-    private float flapTimer = 0f;
-    public float flapInterval = 1f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPosition = new Vector3(0f, 0f, 0f);
-
-        // Reset movement
-        direction = Vector3.zero;
-        flapTimer = 0f;
-
-        // Immediate starting jump
-        direction = Vector3.up * strength;
+        audioSource = FindFirstObjectByType<GameManager>().audioSource;
+        startPosition = transform.position;
+        timer = 0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Count time
-        flapTimer += Time.deltaTime;
+        timer += Time.deltaTime;
 
-        // Auto-flap every interval
-        if (flapTimer >= flapInterval)
+        // Normalize time 0 → 1
+        float t = (timer % bounceDuration) / bounceDuration;
+
+        float y;
+
+        if (t < 0.5f)
         {
-            direction = Vector3.up * strength;   // same as pressing space
-            flapTimer = 0f;                       // reset timer
+            // Fast up (ease out)
+            y = Mathf.Pow(t * 2f, 0.35f);
         }
-        direction.y += gravity * Time.deltaTime;
-        transform.position += direction * Time.deltaTime;
+        else
+        {
+            // Hard fall (ease in)
+            y = 1f - Mathf.Pow((t - 0.5f) * 2f, 1.4f);
+        }
+
+        if (t < 0.05f && !playedThisCycle)
+        {
+            audioSource.PlayOneShot(bounceSound, 0.3f);
+            playedThisCycle = true;
+        }
+
+        if (t > 0.5f)
+        {
+            playedThisCycle = false;
+        }
+        transform.position = startPosition + Vector3.up * y * jumpHeight;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            FindFirstObjectByType<GameManager>().GameOver();
+        }
+        else if (other.gameObject.tag == "Projectile")
+        {
+            Destroy(other.gameObject);
             FindFirstObjectByType<GameManager>().GameOver();
         }
         else if (other.gameObject.tag == "Scoring")
@@ -54,9 +71,7 @@ public class PlayerBehavior : MonoBehaviour
 
     public void ResetPlayer()
     {
-        transform.position = startPosition;  // move bird to start
-        direction = Vector3.zero;            // clear old falling speed
-        flapTimer = 0f;                      // restart timer so flap happens on time
-        direction = Vector3.up * strength;  
+        transform.position = startPosition;
+        timer = 0f;
     }
 }

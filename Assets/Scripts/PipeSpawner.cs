@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class PipeSpawner : MonoBehaviour
 {
     public GameObject prefab;
     public float spawnRate = 5f;

@@ -45,4 +45,19 @@ public class PipesDrag : MonoBehaviour
             );
         }
     }
+
+    public void BeginDragFromChild()
+    {
+        dragging = true;
+
+        Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorld.z = transform.position.z;
+
+        offset = transform.position - mouseWorld;
+    }
+
+    public void EndDrag()
+    {
+        dragging = false;
+    }
 }

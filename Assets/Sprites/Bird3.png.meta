@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bdf8bd0b3551d450aace4335698efa79
+guid: 110532b39243547ed9500f6ea38b517e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1958676783162264248
-    second: PlayButton_0
+      213: -6336752053224900323
+    second: Bird3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayButton_0
+      name: Bird3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 25
+        x: 67
+        y: 115
+        width: 90
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 845fecdd7d161d4e0800000000000000
-      internalID: -1958676783162264248
+      spriteID: d197dc5c4955f08a0800000000000000
+      internalID: -6336752053224900323
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayButton_0: -1958676783162264248
+      Bird3_0: -6336752053224900323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
