@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     private int score;
     private bool hasGameStarted = false;
+
+    public Transform scoreTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -94,5 +97,16 @@ public class GameManager : MonoBehaviour
         score++;
         scoreText.text = score.ToString();
         audioSource.PlayOneShot(scoreSound);
+
+        StopAllCoroutines();
+        StartCoroutine(ScorePop());
+    }
+
+    IEnumerator ScorePop()
+    {
+        Vector3 original = scoreTransform.localScale;
+        scoreTransform.localScale = original * 1.3f;
+        yield return new WaitForSeconds(0.1f);
+        scoreTransform.localScale = original;
     }
 }

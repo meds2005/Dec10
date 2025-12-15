@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 2981485110194249089, guid: 41aad8eddede64fe9a04fbae536eadf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +126,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.86, y: 0.82}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e59d53bcb0d74dc2ba2254bd506d0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popParticlesPrefab: {fileID: 2544102573514091034, guid: 49123416fb6204af78f595d9e583a0eb, type: 3}
   popSound: {fileID: 8300000, guid: 97e585b468ab04998be4bb9331e474f8, type: 3}
   speed: 5
   stopDistance: 0.05

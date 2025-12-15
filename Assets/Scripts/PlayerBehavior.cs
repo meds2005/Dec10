@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -12,11 +13,21 @@ public class PlayerBehavior : MonoBehaviour
     private Vector3 startPosition;
     private float timer;
 
+    public Sprite[] flapSprites;   // size = 3
+    public float flapSpeed = 0.2f;
+
+    private SpriteRenderer spriteRenderer;
+    private int flapIndex = 0;
+    private float flapTimer = 0f;
+
+    private Coroutine flashRoutine;
+
     void Start()
     {
         audioSource = FindFirstObjectByType<GameManager>().audioSource;
         startPosition = transform.position;
         timer = 0f;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -50,16 +61,27 @@ public class PlayerBehavior : MonoBehaviour
             playedThisCycle = false;
         }
         transform.position = startPosition + Vector3.up * y * jumpHeight;
+
+        flapTimer += Time.deltaTime;
+
+        if (flapTimer >= flapSpeed)
+        {
+            flapTimer = 0f;
+            flapIndex = (flapIndex + 1) % flapSprites.Length;
+            spriteRenderer.sprite = flapSprites[flapIndex];
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            StartCoroutine(FlashRoutine());
             FindFirstObjectByType<GameManager>().GameOver();
         }
         else if (other.gameObject.tag == "Projectile")
         {
+            StartCoroutine(FlashRoutine());
             Destroy(other.gameObject);
             FindFirstObjectByType<GameManager>().GameOver();
         }
@@ -73,5 +95,15 @@ public class PlayerBehavior : MonoBehaviour
     {
         transform.position = startPosition;
         timer = 0f;
+    }
+
+    IEnumerator FlashRoutine()
+    {
+        Color original = spriteRenderer.color;
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.05f);
+
+        spriteRenderer.color = original;
     }
 }
